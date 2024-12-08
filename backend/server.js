@@ -16,7 +16,12 @@ app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ limit: "50mb", extended: true }));
 
 // Array of allowed origins
-const allowedOrigins = ["http://localhost:5173", "http://localhost:5174"];
+const allowedOrigins = [
+  "http://localhost:5173",
+  "http://localhost:5174",
+  "https://imaginative-sorbet-54f06d.netlify.app",
+  "https://musical-taffy-590ced.netlify.app",
+];
 
 app.use(
   cors({
