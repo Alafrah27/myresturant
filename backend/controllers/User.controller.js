@@ -34,7 +34,7 @@ export const SignUP = async (req, res) => {
     await res.cookie("token", token, {
       httpOnly: true,
 
-      sameSite: "strict",
+      sameSite: "None",
       secure: true,
     });
     res.status(201).json({ message: "Signup has been successfully" });
@@ -71,7 +71,7 @@ export const Login = async (req, res) => {
     await res.cookie("token", token, {
       httpOnly: true,
 
-      sameSite: "strict",
+      sameSite: "None",
       secure: true,
     });
     res.status(200).json({ message: "Login has been successfully" });
