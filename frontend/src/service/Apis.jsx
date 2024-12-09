@@ -52,8 +52,6 @@ export function AuthUser() {
   return { User, error };
 }
 
-
-
 export function GetAllProduct() {
   const { data: product, isLoading: isLoading } = useQuery({
     queryKey: ["product"],
@@ -72,6 +70,7 @@ export function GetAllProduct() {
 }
 
 export function UseLoginForm() {
+  const queryClient = useQueryClient();
   const navigate = useNavigate();
 
   const {
@@ -84,7 +83,7 @@ export function UseLoginForm() {
       return res.data;
     },
     onSuccess: () => {
-
+      queryClient.invalidateQueries({ queryKey: ["user"] });
       navigate("/");
       toast.success("Login has been Successful");
     },
@@ -98,6 +97,7 @@ export function UseLoginForm() {
 }
 
 export function UseSignupForm() {
+  const queryClient = useQueryClient();
   const navigate = useNavigate();
   const { mutate: signup, isPending: isLoading } = useMutation({
     mutationFn: async (loginData) => {
@@ -105,6 +105,7 @@ export function UseSignupForm() {
       return res.data;
     },
     onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["user"] });
       navigate("/");
       toast.success("register has been Successful");
     },

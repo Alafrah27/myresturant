@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { HiMiniBars3, HiMiniShoppingCart } from "react-icons/hi2";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { UseCartApi } from "../context/CartContext";
 import { AuthUser } from "../service/Apis";
 import { UseLogout } from "../lib/Logout";
@@ -9,7 +9,7 @@ function Navbar() {
   const { logout } = UseLogout();
   const [showMenu, setShowMenu] = useState(false);
   const { cart } = UseCartApi();
-  const navigate = useNavigate();
+
   return (
     <div className=" h-[70px] z-50 ">
       <header className="flex justify-between items-center w-full  p-10 text-gray-200 font-semibold text-[13px]">
@@ -57,10 +57,7 @@ function Navbar() {
               </button>
             ) : (
               <button
-                onClick={() => {
-                  navigate("/");
-                  logout();
-                }}
+                onClick={() => logout()}
                 className="bg-[#3E3322] py-3 px-6 border border-none focus:outline-none rounded-[10px] text-white font-semibold text-1xl"
               >
                 Logout
@@ -148,7 +145,7 @@ function Navbar() {
               <button
                 onClick={() => {
                   logout();
-                  navigate("/");
+
                   setShowMenu(false);
                 }}
                 className="bg-[#3E3322] py-8 px-8 border border-none focus:outline-none text-white font-semibold text-1xl absolute bottom-0 w-full"

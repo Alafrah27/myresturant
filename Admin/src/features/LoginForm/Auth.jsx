@@ -17,18 +17,4 @@ export function AuthUser() {
   return { User, error };
 }
 
-export function ChecAmin() {
-  const { data: Admin } = useQuery({
-    queryKey: ["admin"],
-    queryFn: async () => {
-      try {
-        const res = await axiosInstance.get("/user/admin");
-        return res.data;
-      } catch (err) {
-        toast.error(err.response.data.message || "Something went wrong");
-      }
-    },
-  });
 
-  return { Admin };
-}

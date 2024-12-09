@@ -82,7 +82,7 @@ export const Login = async (req, res) => {
 
 export const logout = async (req, res) => {
   try {
-    await res.clearCookie("access-token");
+    await res.clearCookie("token");
     res.status(200).json({ message: "Logout success" });
   } catch (error) {
     res.status(400).json({ message: "faild to logout" });
