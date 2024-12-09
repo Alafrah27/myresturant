@@ -14,16 +14,23 @@ import Users from "./pages/Users";
 import SinglePage from "./features/signlePage/SinglePage";
 import SingleOrder from "./features/Order/SingleOrder";
 import PickUpOrder from "./pages/PickUpOrder";
-import { AuthUser } from "./features/LoginForm/Auth";
+// import { AuthUser } from "./features/LoginForm/Auth";
+import ProtectRoute from "./protect/ProtectRoute";
 
 function App() {
-  const { User } = AuthUser();
+  // const { User } = AuthUser();
   // const navigate = useNavigate();
 
   return (
     <BrowserRouter>
       <Routes>
-        <Route element={User?.isAdmin === "admin" ? <AppLayout /> : <Login />}>
+        <Route
+          element={
+            <ProtectRoute>
+              <AppLayout />
+            </ProtectRoute>
+          }
+        >
           <Route index element={<Dashboard />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/order" element={<Order />} />
