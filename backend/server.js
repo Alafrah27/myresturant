@@ -19,7 +19,7 @@ app.use(express.urlencoded({ limit: "50mb", extended: true }));
 const allowedOrigins = [
   "http://localhost:5173",
   "http://localhost:5174",
-  "https://myresturant-admin.onrender.com",
+  "https://myresturant-admin.onrender.com/",
   "https://imaginative-sorbet-54f06d.netlify.app",
   "https://musical-taffy-590ced.netlify.app",
 ];
