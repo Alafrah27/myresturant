@@ -20,8 +20,8 @@ const allowedOrigins = [
   "http://localhost:5173",
   "http://localhost:5174",
   "https://myresturant-admin.onrender.com",
-  "https://imaginative-sorbet-54f06d.netlify.app",
-  "https://musical-taffy-590ced.netlify.app",
+  "https://adorable-hamster-ec8a74.netlify.app",
+  "https://leafy-daifuku-6466ec.netlify.app",
 ];
 
 app.use(
