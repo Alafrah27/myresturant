@@ -10,6 +10,7 @@ import Loading from "../../ui/Loading";
 import DeleteOrderAction from "../../deleteOrderAction";
 import DeleteAction from "../../ui/DeleteAction";
 import SingleOrderList from "./SingleOrderList";
+import { formatCurrency } from "../../lib/Currency";
 
 function SingleOrder() {
   const { single } = SingleOrderById();
@@ -92,7 +93,9 @@ function SingleOrder() {
             </h1>
             <h1>
               TotalPrice :{" "}
-              <span className="mx-4 font-semibold ">{single?.totalPrice}</span>
+              <span className="mx-4 font-semibold ">
+                {formatCurrency(single?.totalPrice)}
+              </span>
             </h1>
           </div>
         </div>

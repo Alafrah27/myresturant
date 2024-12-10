@@ -5,6 +5,7 @@ function Filter({ options }) {
   return (
     <select
       onChange={(e) => setFilteredValue(e.target.value)}
+      className="bg-none outline-none px-3 py-2"
     >
       <option value="">Option Filter</option> {/* Default option */}
       {options.map((option) => (

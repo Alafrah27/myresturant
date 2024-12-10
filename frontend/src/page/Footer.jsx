@@ -14,9 +14,7 @@ function Footer() {
       </div>
 
       <div className="flex flex-col gap-3 items-center text-center">
-        <h1>
-          Delivery orders are through JAHEZ Hander Station the chefiz Only
-        </h1>
+        <h1>Delivery orders are through JAHEZ Hanger Station the chefz Only</h1>
         <h1>Delivery orders are through Applications only</h1>
       </div>
       <div className="flex flex-col gap-3 items-center text-center">
@@ -32,7 +30,7 @@ function Footer() {
       </div>
       <div className="w-full flex flex-col gap-3  text-center bg-slate-900 text-white ">
         <h1 className="text-[13px] lg:text-[20px] space-x-2 font-semibold text-center my-[20px] text-gray-400 uppercase w-full">
-          CopyRight&copy; 2024 by Flower & Firewood
+          Only CopyRight&copy; 2024 by Flower & Firewood
         </h1>
       </div>
     </div>

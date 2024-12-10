@@ -68,7 +68,7 @@ function MenuItem({ item }) {
         {!isInCart && (
           <button
             onClick={handleAddToCart}
-            className="bg-[#3E3322]  text-white px-6 py-4 rounded-full "
+            className="bg-[#3E3322]  text-white px-6 py-2 rounded-md text-[12px] "
           >
             Add
           </button>

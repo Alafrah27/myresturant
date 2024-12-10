@@ -8,6 +8,10 @@ import { formatDistanceToNow } from "date-fns";
 function GetAllOrders() {
   const { getOrder, isLoading } = GetOrderById();
 
+  const NotProccesingOrder = getOrder
+    ? getOrder.filter((order) => order.status !== "processing")
+    : [];
+
   if (isLoading) return <Loader />;
   if (!getOrder) return <EmptyCart />;
 
@@ -20,7 +24,7 @@ function GetAllOrders() {
   return (
     <div className="space-y-8 px-4 py-6 w-full mx-auto my-5">
       <div className="max-w-[950px] flex flex-col gap-9  mx-auto">
-        {getOrder?.map((order, index) => (
+        {NotProccesingOrder?.map((order, index) => (
           <div key={index} className="my-4 border-b  pb-4 px-4">
             <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
               <h1 className="text-1xl font-semibold text-black">

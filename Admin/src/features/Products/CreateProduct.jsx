@@ -115,9 +115,12 @@ function CreateProduct({ productToEdit = {}, onCloseModal }) {
             className="px-3 py-4 w-full focus:outline-none border border-grey-300 rounded-sm"
           >
             {category?.map((cat) => (
-              <option key={cat._id} value={cat.name}>
-                {cat.name}
-              </option>
+              <>
+                <option>Categories</option>
+                <option key={cat._id} value={cat.name}>
+                  {cat.name}
+                </option>
+              </>
             ))}
           </select>
           {errors.category && (
